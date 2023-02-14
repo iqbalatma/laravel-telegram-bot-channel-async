@@ -56,7 +56,7 @@ You need to configure the service provider so when the application got an error 
 
 Add the service provider into <b>config/app.php</b> file
 
-```
+```php
 /*
 * Package Service Providers...
 */
@@ -66,7 +66,7 @@ Iqbalatma\LaravelTelegramBotChannelAsync\Providers\TelegramBotChannelServiceProv
 You can log the application with Log class and different level. 
 First parameter is string for log message, and then second parameter is array for log context (optional)
 
-```
+```php
 use Iqbalatma\LaravelTelegramBotChannelAsync\Log;
 
 Log::debug("This is debug message");
