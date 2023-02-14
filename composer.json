@@ -1,0 +1,19 @@
+{
+    "name": "iqbalatma/laravel-telegram-bot-channel-async",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Iqbalatma\\LaravelTelegramBotChannelAsync\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "iqbalatma",
+            "email": "iqbalatma@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.0.2",
+        "laravel/framework": "^8.0 || ^9.19"
+    }
+}
