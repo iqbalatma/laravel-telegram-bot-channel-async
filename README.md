@@ -24,7 +24,7 @@ Add new channel into <b>config/logging.php</b>
 	...,
 	"telegram" => [
 		"driver" => "custom",
-            	"via" => new TelegramLogger(env('TELEGRAM_APP_KEY'), env('TELEGRAM_CHANNEL'), true),
+            	"via" => new Iqbalatma\LaravelTelegramBotChannelAsync\TelegramLogger(env('TELEGRAM_APP_KEY'), env('TELEGRAM_CHANNEL'), true),
             	"level" => "debug"
 	]
 ]
@@ -38,3 +38,17 @@ If you are using log channel type is stack, you can add channel name "telegram" 
 	"channels" => ["single", "telegram"],
 ]
 ```
+
+This package using laravel queue, so the message send asynchronously with Job Class. Before you can use this application you need to set the queue and running the worker. For example you can change the QUEUE_CONNECTION into database (you can use any other driver to do this, like redis).
+
+```
+QUEUE_CONNECTION=database
+```
+
+After you change the queue env config, you need to run the migration and the worker with this command
+```
+php artisan queue:table
+php artisan migrate
+php artisan queue:work
+```
+
