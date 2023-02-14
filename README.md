@@ -21,11 +21,20 @@ Add new channel into <b>config/logging.php</b>
 
 ```php
 "channels" => [
-	....,
-	telegram" => [
+	...,
+	"telegram" => [
 		"driver" => "custom",
             	"via" => new TelegramLogger(env('TELEGRAM_APP_KEY'), env('TELEGRAM_CHANNEL'), true),
             	"level" => "debug"
 	]
+]
+```
+
+If you are using log channel type is stack, you can add channel name "telegram" into the array set like this
+
+```php
+"stack" => [
+    	"driver" => "stack",
+	"channels" => ["single", "telegram"],
 ]
 ```
