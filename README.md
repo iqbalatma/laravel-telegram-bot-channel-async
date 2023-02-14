@@ -52,3 +52,30 @@ php artisan migrate
 php artisan queue:work
 ```
 
+You need to configure the service provider so when the application got an error exception, it can be also send asyncrhonously with overriding the report method handler. 
+
+Add the service provider into <b>config/app.php</b> file
+
+```
+/*
+* Package Service Providers...
+*/
+Iqbalatma\LaravelTelegramBotChannelAsync\Providers\TelegramBotChannelServiceProvider::class,
+```
+
+You can log the application with Log class and different level. 
+First parameter is string for log message, and then second parameter is array for log context (optional)
+
+```
+use Iqbalatma\LaravelTelegramBotChannelAsync\Log;
+
+Log::debug("This is debug message");
+Log::info("This is info message");
+Log::notice("This is notice message");
+Log::warning("This is warning message");
+Log::error("This is error message");
+Log::critical("This is critical message");
+Log::emergency("This is emergency message", , ["problem" => "Some problem description"]);
+```
+
+ 
