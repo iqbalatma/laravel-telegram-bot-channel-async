@@ -21,13 +21,11 @@ Add new channel into <b>config/logging.php</b>
 
 ```php
 "channels" => [
-			
-			....,
-			
-			"telegram" => [
-            "driver" => "custom",
-            "via" => new TelegramLogger(env('TELEGRAM_APP_KEY'), env('TELEGRAM_CHANNEL'), true),
-            "level" => "debug"
-			]
+	....,
+	telegram" => [
+		"driver" => "custom",
+            	"via" => new TelegramLogger(env('TELEGRAM_APP_KEY'), env('TELEGRAM_CHANNEL'), true),
+            	"level" => "debug"
+	]
 ]
 ```
